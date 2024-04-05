@@ -1,0 +1,86 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator-container {
+    
+    background: rgb(211, 206, 206);
+    padding: 20px;
+    border: 2px solid #000;
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+
+    
+}
+
+
+
+
+header h1 {
+    text-align: center;
+    margin: 0 0 20px;
+}
+header h4 {
+    text-align: center;
+    margin: 0 0 20px;
+	font-weight: normal;
+}
+/* Assuming a structure where each label and input pair is wrapped in a div with class form-row */
+
+.form-row {
+    display: flex; /* Use flexbox to lay out the label and input */
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 10px; /* Add space between rows */
+}
+
+.form-row label {
+    /* Aligns label text to the right */
+    text-align: right;
+    /* Set a width on labels to ensure they all have the same width */
+    width: 40%; /* Adjust as needed */
+    margin-right: 10px; /* Adjust the space between the label and input */
+}
+
+/* Style the input fields to fill the remaining space */
+.form-row input[type='text'],
+.form-row input[type='number'],
+.form-row output,
+.form-row input[type='range'] {
+    width: 60%; /* Inputs take up the rest of the space */
+    /* If the inputs need to start exactly after the label, adjust the width percentages */
+}
+
+/* The alignment property is not valid CSS, it should be text-align for inline elements, 
+   but it is not needed for input elements as they are block-level inside a flex container */
+
+/* For the range slider, since it's visually different, it might need an extra adjustment */
+input[type='range'] {
+    /* Adjust margins if necessary */
+    margin: 0;
+}
+/* Set a width on labels to ensure alignment */
+label {
+    min-width: 120px; /* Adjust as needed */
+
+}
+
+/* Style adjustments for the range input */
+input[type='range'] {
+    flex-grow: 2; /* Allows the range input to grow */
+}
+
+/* Override the width for text inputs and percentage display to prevent them from growing too large */
+input[type='text'],
+input[type='text'][disabled],
+output {
+    width: 60%; /* Allows these elements to only be as wide as their content */
+    flex-grow: 0;
+}
